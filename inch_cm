@@ -1,0 +1,27 @@
+convert_inch_to_cm <- function(inch) {
+  """
+  This function converts inches to centimeters.
+  
+  Parameters:
+  inch (numeric): The length in inches to be converted to centimeters
+  
+  Returns:
+  numeric: The length in centimeters
+  """
+  tryCatch({
+    # Check if the input is numeric
+    if (!is.numeric(inch)) {
+      stop("Input must be numeric")
+    }
+    
+    # Convert inches to centimeters
+    cm <- inch * 2.54
+    
+    # Return the result
+    return(cm)
+  }, error = function(e) {
+    # Log the error
+    cat("Error: ", e$message, "\n")
+    return(0)
+  })
+}
